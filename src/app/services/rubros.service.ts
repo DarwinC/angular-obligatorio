@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioService} from '../services/usuario.service';
 
-@Injectable(
+@Injectable({
     providedIn: "root"
+}
 )
 export class RubrosService {
 
