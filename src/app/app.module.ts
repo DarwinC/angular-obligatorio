@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +20,9 @@ import { UpdateGastoComponent } from './update-gasto/update-gasto.component';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule, 
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    NoopAnimationsModule,
     RouterModule.forRoot([
       { path: "", component:  LoginComponent},
       { path: "gastos", component:  ListaGastosComponent},
