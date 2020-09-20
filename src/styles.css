@@ -112,10 +112,26 @@ app-top-bar {
   background-color: #1976d2;
   padding: 16px;
   display: flex;
+  
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
+app-top-bar h3{
+  color: #fff;
+}
+
+app-top-bar ul li{
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+
 
 app-top-bar h1 {
   color: white;
