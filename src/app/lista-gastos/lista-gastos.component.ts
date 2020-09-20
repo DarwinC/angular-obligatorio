@@ -25,11 +25,11 @@ test=['a','b','c'];
   }
   */
   ngOnInit() {
-/*
+
   this.gastosService.getAll().subscribe(a => {
   //    this.gastosService.getAll().subscribe(res => {
       console.log(a);
-      this.gastos = a.gastos;
+      this.gastos = a['gastos'];
       console.log("Se consulto el listado de gastos");
     },
     err => {
@@ -37,7 +37,7 @@ test=['a','b','c'];
         console.log("Ha ocurrido un error en el servidor");
       }
     });
-*/
+
 /*
   this.rubrosService.getAll().subscribe(a => {
   //    this.gastosService.getAll().subscribe(res => {
