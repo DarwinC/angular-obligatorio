@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
@@ -15,10 +15,6 @@ import { ListaRubrosComponent } from './lista-rubros/lista-rubros.component';
 import { AddGastoComponent } from './add-gasto/add-gasto.component';
 import { UpdateGastoComponent } from './update-gasto/update-gasto.component';
 
-import 'hammerjs';
-
-import { MatTabsModule } from '@angular/material';
-
 
 @NgModule({
   imports: [
@@ -26,8 +22,6 @@ import { MatTabsModule } from '@angular/material';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule, 
-    NoopAnimationsModule,
     RouterModule.forRoot([
       { path: "", component:  LoginComponent},
       { path: "gastos", component:  ListaGastosComponent},

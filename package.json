@@ -16,8 +16,6 @@
     "rxjs": "^6.6.2",
     "tslib": "^2.0.1",
     "zone.js": "^0.10.3",
-    "hammerjs": "2.0.8",
-    "@angular/material": "6.4.2"
   },
   "scripts": {
     "ng": "ng",
