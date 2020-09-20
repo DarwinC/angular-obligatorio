@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GastosService } from '../services/gastos.service'
 import { Router } from '@angular/router';
-
+import { UsuarioService } from '../services/usuario.service'
 
 @Component({
   selector: 'app-lista-gastos',
@@ -13,6 +13,7 @@ gastos;
   constructor(
     private gastosService: GastosService,
     private router: Router,
+    private userService: UsuarioService,
   ) { }
 
 
@@ -22,7 +23,9 @@ gastos;
   }
   */
   ngOnInit() {
-
+if(!this.userService.isLoggedIn()){
+  this.router.navigate(['']);
+}
   this.gastosService.getAll().subscribe(a => {
   //    this.gastosService.getAll().subscribe(res => {
       console.log(a);

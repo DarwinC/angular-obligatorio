@@ -24,6 +24,7 @@ import { UpdateGastoComponent } from './update-gasto/update-gasto.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: "", component:  LoginComponent},
+      { path: "login", component:  LoginComponent},
       { path: "gastos", component:  ListaGastosComponent},
       { path: "agregar-gasto", component:  ListaGastosComponent},
       { path: "modificar-gasto", component:  ListaGastosComponent},

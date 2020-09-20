@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../services/usuario.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
+  usuario;
+  constructor(
+    private userService:UsuarioService,
+    private router: Router,
+  ) { }
 
-  constructor() { }
+  logueado(){
+    return this.userService.isLoggedIn();
+  }
+
+  usuarioLogueado(){
+    return this.userService.getUser().usuario;
+  }
 
   ngOnInit() {
+    if(!this.userService.isLoggedIn()){
+      this.router.navigate(['']);
+    }
+    
   }
+    
+  
 
 }
