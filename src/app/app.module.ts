@@ -15,6 +15,11 @@ import { ListaRubrosComponent } from './lista-rubros/lista-rubros.component';
 import { AddGastoComponent } from './add-gasto/add-gasto.component';
 import { UpdateGastoComponent } from './update-gasto/update-gasto.component';
 
+import 'hammerjs';
+
+import { MatTabsModule } from '@angular/material';
+
+
 @NgModule({
   imports: [
     BrowserModule,
