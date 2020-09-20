@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GastosService } from '../services/gastos.service'
 import { Router } from '@angular/router';
-import { RubrosService } from '../services/rubros.service';
+
 
 @Component({
   selector: 'app-lista-gastos',
@@ -10,11 +10,8 @@ import { RubrosService } from '../services/rubros.service';
 })
 export class ListaGastosComponent implements OnInit {
 gastos;
-rubros;
-test=['a','b','c'];
   constructor(
     private gastosService: GastosService,
-    private rubrosService: RubrosService,
     private router: Router,
   ) { }
 

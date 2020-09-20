@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RubrosService } from '../services/rubros.service';
 
 @Component({
   selector: 'app-lista-rubros',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaRubrosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private rubrosService: RubrosService,
+  ) { }
 
   ngOnInit() {
   }
