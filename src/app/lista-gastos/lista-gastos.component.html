@@ -1,6 +1,21 @@
-<div *ngFor="let gasto of gastos">
-{{gasto.nombre}}
+<h2>Gastos</h2>
+<div class="rTable">
+	<div class="rTableRow">
+		<div class="rTableHead"><strong>Nombre</strong></div>
+		<div class="rTableHead"><strong>Monto</strong></div>
+		<div class="rTableHead"><strong>Usuario</strong></div>
+		<div class="rTableHead"><strong>Rubro</strong></div>
+		<div class="rTableHead"><strong>Acciones</strong></div>
+	</div>
+	<div class="rTableRow" *ngFor="let gasto of gastos">
+		<div class="rTableCell">{{gasto.nombre}}</div>
+		<div class="rTableCell">{{gasto.monto}}</div>
+		<div class="rTableCell">{{gasto.usuario}}</div>
+		<div class="rTableCell">{{gasto.rubro}}</div>
+		<div class="rTableCell"><a [routerLink]="">Eliminar</a></div>
+	</div>
 </div>
+
 <!--//*
 <button class="btn btn-primary" (click)="clickMe()" > click me </button>
 *//-->
