@@ -26,8 +26,7 @@ import { AddGastoComponent } from './add-gasto/add-gasto.component';
       { path: "", component:  LoginComponent},
       { path: "login", component:  LoginComponent},
       { path: "gastos", component:  ListaGastosComponent},
-      { path: "agregar-gasto", component:  ListaGastosComponent},
-      { path: "modificar-gasto", component:  ListaGastosComponent},
+      { path: "gastos/agregar-gasto", component:  AddGastoComponent},
       { path: "rubros", component:  ListaRubrosComponent},
       { path: "registro", component:  RegistroComponent},
 

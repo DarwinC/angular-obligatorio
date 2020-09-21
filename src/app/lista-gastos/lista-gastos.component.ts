@@ -37,20 +37,16 @@ if(!this.userService.isLoggedIn()){
         console.log("Ha ocurrido un error en el servidor");
       }
     });
-
-/*
-  this.rubrosService.getAll().subscribe(a => {
-  //    this.gastosService.getAll().subscribe(res => {
+  }
+  
+  eliminar(idgasto){
+    this.gastosService.remove(idgasto).subscribe(a => {
       console.log(a);
-      //this.rubros = a.rubros;
-      console.log("Se consulto el listado de gastos");
-    },err => {
-
-      if(err.status === 500){
-        console.log("Ha ocurrido un error en el servidor");
-      }
+    },
+    err=>{
+      console.log("Ha ocurrido un error");
+      console.log(err);
     });
-  */
   }
 
 }

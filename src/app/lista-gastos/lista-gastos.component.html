@@ -16,7 +16,7 @@
 		<div class="rTableCell">{{gasto.monto}}</div>
 		<div class="rTableCell">{{gasto.usuario}}</div>
 		<div class="rTableCell">{{gasto.rubro}}</div>
-		<div class="rTableCell"><a [routerLink]="">Eliminar</a></div>
+		<div class="rTableCell"><button (click)="eliminar(gasto.id)">Eliminar</button></div>
 	</div>
 </div>
 
