@@ -13,7 +13,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { ListaRubrosComponent } from './lista-rubros/lista-rubros.component';
 import { AddGastoComponent } from './add-gasto/add-gasto.component';
-import { UpdateGastoComponent } from './update-gasto/update-gasto.component';
+
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import { UpdateGastoComponent } from './update-gasto/update-gasto.component';
 
     ])
   ],
-  declarations: [AppComponent, TopBarComponent, ListaGastosComponent, FooterComponent, RegistroComponent, LoginComponent, ListaRubrosComponent, AddGastoComponent, UpdateGastoComponent],
+  declarations: [AppComponent, TopBarComponent, ListaGastosComponent, FooterComponent, RegistroComponent, LoginComponent, ListaRubrosComponent, AddGastoComponent],
   bootstrap: [AppComponent],
 
 })
