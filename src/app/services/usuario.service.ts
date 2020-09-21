@@ -32,4 +32,12 @@ user;
     return this.http.post("https://xpense.develotion.com/login.php",body,{ headers });
   }
 
+    register(usuario, password){
+    const headers = { 'Content-Type': 'application/json' };
+
+    const body = JSON.stringify({usuario,password});
+    
+    return this.http.post("https://xpense.develotion.com/usuarios.php",body,{ headers });
+  }
+
 }

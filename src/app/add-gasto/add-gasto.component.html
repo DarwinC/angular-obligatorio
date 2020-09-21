@@ -1,0 +1,30 @@
+<h3>Agregar gasto</h3>
+
+<form [formGroup]="addGastoForm" (ngSubmit)="onSubmit(addGastoForm.value)">
+
+  <div>
+    <label for="nombre">
+      Nombre
+    </label>
+    <input id="nombre" type="text" formControlName="nombre">
+  </div>
+
+  <div>
+    <label for="monto">
+      Monto
+    </label>
+    <input id="monto" type="text" formControlName="monto">
+  </div>
+
+  <div>
+    <label for="rubro">
+      rubro
+    </label>
+    <input id="rubro" type="text" formControlName="rubro">
+  </div>
+
+  <h3 *ngIf="errMsg">{{errMsg}}</h3>
+
+  <button class="button" type="submit">Agregar</button>
+
+</form>

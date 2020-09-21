@@ -1,0 +1,23 @@
+<h3>Registro de usuario</h3>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+
+  <div>
+    <label for="usuario">
+      Usuario
+    </label>
+    <input id="usuario" type="text" formControlName="usuario">
+  </div>
+
+  <div>
+    <label for="password">
+      Contraseña
+    </label>
+    <input id="password" type="text" formControlName="password">
+  </div>
+
+  <h3 *ngIf="errMsg">{{errMsg}}</h3>
+
+  <button class="button" type="submit">Registrar</button>
+
+</form>
