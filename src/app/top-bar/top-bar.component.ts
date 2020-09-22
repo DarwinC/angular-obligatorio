@@ -28,6 +28,11 @@ export class TopBarComponent implements OnInit {
     }
     
   }
+
+  logOut(){
+    this.userService.setUser(null);
+    this.router.navigate(['']);
+  }
     
   
 

@@ -75,6 +75,6 @@ obtenerRubros(){
   }
 
   obtenerNombreRubro(idRubro){
-    return this.rubros.find(element=>element['id']===idRubro);
+    return this.rubros.find(element=>element['id']===idRubro)['nombre'];
   }
 }

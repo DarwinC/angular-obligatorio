@@ -2,5 +2,7 @@
 <ul *ngIf="logueado()">
   <li><a [routerLink]="['gastos']">Gastos</a></li>
   <li><a [routerLink]="['rubros']">Rubros</a></li>
-  <li><a [routerLink]="['gastos2']"> {{usuarioLogueado()}}</a></li>
+  <!--<ul class="dropdown">-->
+  <li><a (click)="logOut()"> {{usuarioLogueado()}}</a></li>
+  <!--</ul>-->
 </ul>

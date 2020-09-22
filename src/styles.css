@@ -144,6 +144,28 @@ app-top-bar ul li{
   border-radius: 5px;
 }
 
+app-top-bar ul li ul {
+  background: orange;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+}
+
+app-top-bar ul li:hover > ul,
+app-top-bar ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+app-top-bar ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
 app-top-bar h1 {
   color: white;
   margin: 0;
@@ -215,6 +237,7 @@ app-footer p{
     font-size: 12px;
     margin: 0;
 }
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
