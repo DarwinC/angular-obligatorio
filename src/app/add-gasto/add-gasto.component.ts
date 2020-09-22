@@ -5,7 +5,6 @@ import { FormBuilder } from "@angular/forms";
 import { RubrosService } from "../services/rubros.service";
 import { IgxToastPosition } from "igniteui-angular";
 
-
 @Component({
   selector: "app-add-gasto",
   templateUrl: "./add-gasto.component.html",
@@ -52,6 +51,10 @@ export class AddGastoComponent implements OnInit {
         }
       }
     );
+  }
+
+  public showToast(toast /*, position*/) {
+    toast.toast.show();
   }
 
   onSubmit(registerData) {
