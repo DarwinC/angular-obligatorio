@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { GastosService } from "../services/gastos.service";
 import { Router } from "@angular/router";
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: "app-add-gasto",
@@ -11,7 +12,17 @@ export class AddGastoComponent implements OnInit {
   errMsg;
   addGastoForm;
 
-  constructor(private gastosService: GastosService, private router: Router) {}
+  constructor(
+    private gastosService: GastosService, 
+    private router: Router,
+    private formBuilder: FormBuilder,) 
+    {
+      this.addGastoForm = this.formBuilder.group({
+      nombre: '',
+      monto: '',
+      rubro: '',
+    });
+    }
 
   ngOnInit() {}
 
