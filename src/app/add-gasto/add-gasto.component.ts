@@ -11,15 +11,24 @@ import { ToastConfig, Toaster, ToastType } from "ngx-toast-notifications";
   styleUrls: ["./add-gasto.component.css"]
 })
 export class AddGastoComponent implements OnInit {
-  public toastPosition: IgxToastPosition = IgxToastPosition.Top;
+  
   errMsg;
   addGastoForm;
   rubros;
   myDropDown;
-  toast;
 
+/* tipos de toast
+'success'
+'danger'
+'warning'
+'info'
+'primary'
+'secondary'
+'dark'
+'light'
+*/
   constructor(
-    
+    private toaster: Toaster,
     private gastosService: GastosService,
     private router: Router,
     private rubrosService: RubrosService,
@@ -34,6 +43,7 @@ export class AddGastoComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerRubros();
+    this.showToast('warning','Un mensaje','Top');
   }
 // evento de cambio del select
   onChangeofOptions(newGov) {
@@ -55,12 +65,13 @@ export class AddGastoComponent implements OnInit {
     );
   }
 // el toast
-  showToast() {
-    const type = this.randomType;
+  showToast(tipo,msg,posicion) {
+    const type=tipo;
     this.toaster.open({
-      text: this.text,
+      text: msg,
       caption: type + ' notification',
       type: type,
+      position: posicion,
     });
   }
 // el agregado de gasto
@@ -77,9 +88,7 @@ export class AddGastoComponent implements OnInit {
       .add(registerData.nombre, registerData.monto, registerData.rubro)
       .subscribe(
         gasto => {
-          this.errMsg="TODO OK";
-          console.log(gasto);
-          this.showToast();
+          this.showToast('success','Se agregó el gasto','Top');
           this.router.navigate(["/gastos"]);
         },
         err => {

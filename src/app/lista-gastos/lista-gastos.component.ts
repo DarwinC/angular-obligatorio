@@ -28,8 +28,8 @@ export class ListaGastosComponent implements OnInit {
     if (!this.userService.isLoggedIn()) {
       this.router.navigate([""]);
     }
-    this.obtenerGastos();
     this.obtenerRubros();
+
   }
 
   obtenerGastos() {
@@ -63,8 +63,9 @@ export class ListaGastosComponent implements OnInit {
 
 obtenerRubros(){
       this.rubrosService.getAll().subscribe(a => {
-      console.log(a);
+
       this.rubros = a['rubros'];
+      this.obtenerGastos();
       console.log("Se consulto el listado de rubros");
     },
     err => {
