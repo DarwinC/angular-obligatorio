@@ -31,7 +31,7 @@ export class AddGastoComponent implements OnInit {
     // Process checkout data here
     this.addGastoForm.reset();
 
-    console.warn("Login information", registerData);
+    console.warn("Gasto information", registerData);
 
     //const { usuario, password } = registerData;
 
