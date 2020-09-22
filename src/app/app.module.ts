@@ -1,6 +1,11 @@
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-
+import { 
+	IgxButtonModule,
+	IgxRippleModule,
+	IgxToastModule
+ } from "igniteui-angular";
+ 
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +18,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { ListaRubrosComponent } from './lista-rubros/lista-rubros.component';
 import { AddGastoComponent } from './add-gasto/add-gasto.component';
+
 
 
 

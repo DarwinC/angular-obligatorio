@@ -3,6 +3,8 @@ import { GastosService } from "../services/gastos.service";
 import { Router } from "@angular/router";
 import { FormBuilder } from "@angular/forms";
 import { RubrosService } from "../services/rubros.service";
+import { IgxToastPosition } from "igniteui-angular";
+
 
 @Component({
   selector: "app-add-gasto",
