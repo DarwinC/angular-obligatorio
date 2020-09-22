@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { GastosService } from '../services/gastos.service'
+import { Component, OnInit,Inject } from '@angular/core';
+import { GastosService } from '../services/gastos.service';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../services/usuario.service'
+import { UsuarioService } from '../services/usuario.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-lista-gastos',
@@ -11,6 +12,7 @@ import { UsuarioService } from '../services/usuario.service'
 export class ListaGastosComponent implements OnInit {
 gastos;
   constructor(
+    @Inject(DOCUMENT) private _document: Document,
     private gastosService: GastosService,
     private router: Router,
     private userService: UsuarioService,
@@ -38,10 +40,10 @@ if(!this.userService.isLoggedIn()){
       }
     });
   }
-  
+
   eliminar(idgasto){
     this.gastosService.remove(idgasto).subscribe(a => {
-      console.log(a);
+      this._document.defaultView.location.reload();
     },
     err=>{
       console.log("Ha ocurrido un error");
