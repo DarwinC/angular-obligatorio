@@ -16,7 +16,7 @@ body {
   margin: auto;
   width: 50%;
   flex-direction: row;
-  border: 3px solid green;
+  box-shadow: 2.25px 0.1px 4px black;
   padding: 10px;
 }
 
