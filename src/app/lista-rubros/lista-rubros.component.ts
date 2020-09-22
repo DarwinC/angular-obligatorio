@@ -13,8 +13,11 @@ rubros;
   ) { }
 
   ngOnInit() {
+    this.obtenerRubros();
+  }
 
-  this.rubrosService.getAll().subscribe(a => {
+  obtenerRubros(){
+      this.rubrosService.getAll().subscribe(a => {
       console.log(a);
       this.rubros = a['rubros'];
       console.log("Se consulto el listado de rubros");
@@ -24,7 +27,6 @@ rubros;
         console.log("Ha ocurrido un error en el servidor");
       }
     });
-
   }
 
 }
