@@ -34,7 +34,7 @@ export class RegistroComponent implements OnInit {
     // Process checkout data here
     this.registerForm.reset();
 
-    console.warn('Login information', registerData);
+    console.warn('Register information', registerData);
 
     const { usuario, password } = registerData;
 
