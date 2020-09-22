@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { 
 	IgxButtonModule,
 	IgxRippleModule,
-	IgxToastModule
+	IgxToastModule,
  } from "igniteui-angular";
  
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";

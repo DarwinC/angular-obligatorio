@@ -16,6 +16,7 @@ export class AddGastoComponent implements OnInit {
   addGastoForm;
   rubros;
   myDropDown;
+  toast;
 
   constructor(
     private gastosService: GastosService,
@@ -33,11 +34,11 @@ export class AddGastoComponent implements OnInit {
   ngOnInit() {
     this.obtenerRubros();
   }
-
+// evento de cambio del select
   onChangeofOptions(newGov) {
     console.log(newGov);
   }
-
+// obtengo los rubros
   obtenerRubros() {
     this.rubrosService.getAll().subscribe(
       a => {
@@ -52,11 +53,11 @@ export class AddGastoComponent implements OnInit {
       }
     );
   }
-
-  public showToast(toast /*, position*/) {
+// el toast
+  public showToast(toast) {
     toast.toast.show();
   }
-
+// el agregado de gasto
   onSubmit(registerData) {
     this.errMsg = undefined;
     // Process checkout data here
@@ -70,7 +71,9 @@ export class AddGastoComponent implements OnInit {
       .add(registerData.nombre, registerData.monto, registerData.rubro)
       .subscribe(
         gasto => {
+          this.errMsg="TODO OK";
           console.log(gasto);
+          this.showToast(this.toast);
           this.router.navigate(["/gastos"]);
         },
         err => {
