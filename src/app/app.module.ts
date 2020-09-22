@@ -1,10 +1,6 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { 
-	IgxButtonModule,
-	IgxRippleModule,
-	IgxToastModule,
- } from "igniteui-angular";
+import { ToastNotificationsModule } from "ngx-toast-notifications";
  
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
@@ -28,6 +24,7 @@ import { AddGastoComponent } from './add-gasto/add-gasto.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+        ToastNotificationsModule,
     RouterModule.forRoot([
       { path: "", component:  LoginComponent},
       { path: "login", component:  LoginComponent},
@@ -39,9 +36,6 @@ import { AddGastoComponent } from './add-gasto/add-gasto.component';
     ])
 
 ],
-    schemas: [
-  CUSTOM_ELEMENTS_SCHEMA
-  ],
   declarations: [AppComponent, TopBarComponent, ListaGastosComponent, FooterComponent, RegistroComponent, LoginComponent, ListaRubrosComponent, AddGastoComponent],
   bootstrap: [AppComponent],
 

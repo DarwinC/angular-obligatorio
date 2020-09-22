@@ -3,7 +3,7 @@ import { GastosService } from "../services/gastos.service";
 import { Router } from "@angular/router";
 import { FormBuilder } from "@angular/forms";
 import { RubrosService } from "../services/rubros.service";
-import { IgxToastPosition } from "igniteui-angular";
+import { ToastConfig, Toaster, ToastType } from "ngx-toast-notifications";
 
 @Component({
   selector: "app-add-gasto",
@@ -19,6 +19,7 @@ export class AddGastoComponent implements OnInit {
   toast;
 
   constructor(
+    
     private gastosService: GastosService,
     private router: Router,
     private rubrosService: RubrosService,
@@ -54,8 +55,13 @@ export class AddGastoComponent implements OnInit {
     );
   }
 // el toast
-  public showToast(toast) {
-    toast.toast.show();
+  showToast() {
+    const type = this.randomType;
+    this.toaster.open({
+      text: this.text,
+      caption: type + ' notification',
+      type: type,
+    });
   }
 // el agregado de gasto
   onSubmit(registerData) {
@@ -73,7 +79,7 @@ export class AddGastoComponent implements OnInit {
         gasto => {
           this.errMsg="TODO OK";
           console.log(gasto);
-          this.showToast(this.toast);
+          this.showToast();
           this.router.navigate(["/gastos"]);
         },
         err => {
