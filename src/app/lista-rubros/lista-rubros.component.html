@@ -1,9 +1,12 @@
 <h2>Rubros</h2>
 <div class="rTable">
 	<div class="rTableRow">
+    <div class="rTableHead"><strong>Id</strong></div>
 		<div class="rTableHead"><strong>Nombre</strong></div>
 	</div>
 	<div class="rTableRow" *ngFor="let rubro of rubros">
+    <div class="rTableCell">{{rubro.id}}</div>
 		<div class="rTableCell">{{rubro.nombre}}</div>
+    		
 	</div>
 </div>
