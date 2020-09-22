@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { GastosService } from "../services/gastos.service";
 import { Router } from "@angular/router";
 import { FormBuilder } from '@angular/forms';
+import { RubrosService } from '../services/rubros.service';
 
 @Component({
   selector: "app-add-gasto",
@@ -11,10 +12,13 @@ import { FormBuilder } from '@angular/forms';
 export class AddGastoComponent implements OnInit {
   errMsg;
   addGastoForm;
+  rubros;
+  myDropDown;
 
   constructor(
     private gastosService: GastosService, 
     private router: Router,
+    private rubrosService: RubrosService,
     private formBuilder: FormBuilder,) 
     {
       this.addGastoForm = this.formBuilder.group({
@@ -24,7 +28,13 @@ export class AddGastoComponent implements OnInit {
     });
     }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.rubros = this.rubrosService.getAll();
+  }
+
+onChangeofOptions(newGov) {
+     console.log(newGov);
+}
 
   onSubmit(registerData) {
     this.errMsg = undefined;

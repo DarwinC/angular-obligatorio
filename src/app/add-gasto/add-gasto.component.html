@@ -20,7 +20,13 @@
     <label for="rubro">
       rubro
     </label>
-    <input id="rubro" type="text" formControlName="rubro">
+
+<select formControlName="rubro" [(ngModel)]="myDropDown" (ngModelChange)="onChangeofOptions($event)">
+    <option *ngFor="let rubro of rubros"  value="rubro.id">{{rubro.nombre}}</option>
+</select>
+<!--//*<input [hidden]="myDropDown !=='two'"type="text">*//-->
+
+    <!--//*<input id="rubro" type="text" formControlName="rubro">*//-->
   </div>
 
   <h3 *ngIf="errMsg">{{errMsg}}</h3>

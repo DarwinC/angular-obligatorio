@@ -13,7 +13,6 @@ import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { ListaRubrosComponent } from './lista-rubros/lista-rubros.component';
 import { AddGastoComponent } from './add-gasto/add-gasto.component';
-import { ListaGastos2Component } from './lista-gastos2/lista-gastos2.component';
 
 
 
@@ -27,7 +26,6 @@ import { ListaGastos2Component } from './lista-gastos2/lista-gastos2.component';
       { path: "", component:  LoginComponent},
       { path: "login", component:  LoginComponent},
       { path: "gastos", component:  ListaGastosComponent},
-      { path: "gastos2", component:  ListaGastos2Component},
       { path: "gastos/agregar-gasto", component:  AddGastoComponent},
       { path: "rubros", component:  ListaRubrosComponent},
       { path: "registro", component:  RegistroComponent},
@@ -38,7 +36,7 @@ import { ListaGastos2Component } from './lista-gastos2/lista-gastos2.component';
     schemas: [
   CUSTOM_ELEMENTS_SCHEMA
   ],
-  declarations: [AppComponent, TopBarComponent, ListaGastosComponent, FooterComponent, RegistroComponent, LoginComponent, ListaRubrosComponent, AddGastoComponent, ListaGastos2Component],
+  declarations: [AppComponent, TopBarComponent, ListaGastosComponent, FooterComponent, RegistroComponent, LoginComponent, ListaRubrosComponent, AddGastoComponent],
   bootstrap: [AppComponent],
 
 })
