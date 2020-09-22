@@ -131,8 +131,6 @@ app-top-bar ul li{
   border-radius: 5px;
 }
 
-
-
 app-top-bar h1 {
   color: white;
   margin: 0;
@@ -185,7 +183,10 @@ app-top-bar h1 {
    display: table-row-group;
 }
 
-
+/* footer*/
+app-footer h3{
+  margin-left: 20px;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
