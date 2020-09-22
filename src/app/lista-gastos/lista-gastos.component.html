@@ -15,7 +15,7 @@
 		<div class="rTableCell">{{gasto.nombre}}</div>
 		<div class="rTableCell">{{gasto.monto}}</div>
 		<div class="rTableCell">{{gasto.usuario}}</div>
-		<div class="rTableCell">{{gasto.rubro}}</div>
+		<div class="rTableCell">{{(obtenerNombreRubro(gasto.rubro))['nombre']}}</div>
 		<div class="rTableCell"><button (click)="eliminar(gasto.id)">Eliminar</button></div>
 	</div>
 </div>

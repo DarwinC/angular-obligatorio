@@ -22,7 +22,7 @@
     </label>
 
 <select formControlName="rubro" [(ngModel)]="myDropDown" (ngModelChange)="onChangeofOptions($event)">
-    <option *ngFor="let rubro of rubros"  value="rubro.id">{{rubro.nombre}}</option>
+    <option *ngFor="let rubro of rubros"  value={{rubro.id}}>{{rubro.nombre}}</option>
 </select>
 <!--//*<input [hidden]="myDropDown !=='two'"type="text">*//-->
 

@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from "@angular/core";
 import { GastosService } from "../services/gastos.service";
 import { Router } from "@angular/router";
 import { UsuarioService } from "../services/usuario.service";
+import { RubrosService } from "../services/rubros.service";
 
 @Component({
   selector: "app-lista-gastos",
@@ -10,8 +11,10 @@ import { UsuarioService } from "../services/usuario.service";
 })
 export class ListaGastosComponent implements OnInit {
   gastos;
+  rubros;
   constructor(
     private gastosService: GastosService,
+    private rubrosService: RubrosService,
     private router: Router,
     private userService: UsuarioService
   ) {}
@@ -26,6 +29,7 @@ export class ListaGastosComponent implements OnInit {
       this.router.navigate([""]);
     }
     this.obtenerGastos();
+    this.obtenerRubros();
   }
 
   obtenerGastos() {
@@ -55,5 +59,22 @@ export class ListaGastosComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+obtenerRubros(){
+      this.rubrosService.getAll().subscribe(a => {
+      console.log(a);
+      this.rubros = a['rubros'];
+      console.log("Se consulto el listado de rubros");
+    },
+    err => {
+      if(err.status === 500){
+        console.log("Ha ocurrido un error en el servidor");
+      }
+    });
+  }
+
+  obtenerNombreRubro(idRubro){
+    return this.rubros.find(element=>element['id']===idRubro);
   }
 }
