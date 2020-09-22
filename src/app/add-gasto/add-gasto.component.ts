@@ -12,6 +12,7 @@ import { IgxToastPosition } from "igniteui-angular";
   styleUrls: ["./add-gasto.component.css"]
 })
 export class AddGastoComponent implements OnInit {
+  public toastPosition: IgxToastPosition = IgxToastPosition.Top;
   errMsg;
   addGastoForm;
   rubros;
