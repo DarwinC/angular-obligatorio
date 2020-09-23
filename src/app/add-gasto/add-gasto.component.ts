@@ -43,7 +43,7 @@ export class AddGastoComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerRubros();
-    this.showToast('warning','Un mensaje','Top');
+    this.showToast('warning','Titulo','Un mensaje','top-center');
   }
 // evento de cambio del select
   onChangeofOptions(newGov) {
@@ -65,11 +65,11 @@ export class AddGastoComponent implements OnInit {
     );
   }
 // el toast
-  showToast(tipo,msg,posicion) {
+  showToast(tipo,title,msg,posicion) {
     const type=tipo;
     this.toaster.open({
       text: msg,
-      caption: type + ' notification',
+      caption: type + ' ' + title,
       type: type,
       position: posicion,
     });
@@ -88,7 +88,7 @@ export class AddGastoComponent implements OnInit {
       .add(registerData.nombre, registerData.monto, registerData.rubro)
       .subscribe(
         gasto => {
-          this.showToast('success','Se agregó el gasto','Top');
+          this.showToast('success','Agregado','Se agregó el gasto','top-center');
           this.router.navigate(["/gastos"]);
         },
         err => {

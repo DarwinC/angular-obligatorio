@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { ToastNotificationsModule } from "ngx-toast-notifications";
- 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +26,7 @@ import { AddGastoComponent } from './add-gasto/add-gasto.component';
     FormsModule,
     HttpClientModule,
         ToastNotificationsModule,
+        BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: "", component:  LoginComponent},
       { path: "login", component:  LoginComponent},
