@@ -11,13 +11,12 @@ import { ToastConfig, Toaster, ToastType } from "ngx-toast-notifications";
   styleUrls: ["./add-gasto.component.css"]
 })
 export class AddGastoComponent implements OnInit {
-  
   errMsg;
   addGastoForm;
   rubros;
   myDropDown;
 
-/* tipos de toast
+  /* tipos de toast
 'success'
 'danger'
 'warning'
@@ -43,13 +42,12 @@ export class AddGastoComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerRubros();
-    
   }
-// evento de cambio del select
+  // evento de cambio del select
   onChangeofOptions(newGov) {
     console.log(newGov);
   }
-// obtengo los rubros
+  // obtengo los rubros
   obtenerRubros() {
     this.rubrosService.getAll().subscribe(
       a => {
@@ -59,23 +57,23 @@ export class AddGastoComponent implements OnInit {
       },
       err => {
         if (err.status === 500) {
-          this.showToast('warning','Titulo','Un mensaje','top-center');
+          this.showToast("warning", "Titulo", "Un mensaje", "top-center");
           console.log("Ha ocurrido un error en el servidor");
         }
       }
     );
   }
-// el toast
-  showToast(tipo,title,msg,posicion) {
-    const type=tipo;
+  // el toast
+  showToast(tipo, title, msg, posicion) {
+    const type = tipo;
     this.toaster.open({
       text: msg,
-      caption: type + ' ' + title,
+      caption: type + " " + title,
       type: type,
-      position: posicion,
+      position: posicion
     });
   }
-// el agregado de gasto
+  // el agregado de gasto
   onSubmit(registerData) {
     this.errMsg = undefined;
     // Process checkout data here
@@ -89,13 +87,27 @@ export class AddGastoComponent implements OnInit {
       .add(registerData.nombre, registerData.monto, registerData.rubro)
       .subscribe(
         gasto => {
-          this.showToast('success','Agregado','Se agregó el gasto','top-center');
+          this.showToast(
+            "success",
+            "Agregado",
+            "Se agregó el gasto",
+            "top-center"
+          );
           this.router.navigate(["/gastos"]);
         },
         err => {
-          if (err.status === 409) {
-            this.errMsg = "Error.";
+          const estado_error = err.status;
+          switch (estado_error) {
+            case estado_error > 500:
+              this.errMsg =
+                "Ha ocurrido un error en el servidor al procesar su solicitud. Por favor vuelva a intentar más tarde. Si el problema persiste pongase en constacto con su administrador de soporte técnico.";
+              break;
+            default:
+              this.errMsg = "Ha ocurrido un error.";
+              break;
           }
+
+          this.showToast("warning", "Atención", this.errMsg, "top-center");
         }
       );
   }
