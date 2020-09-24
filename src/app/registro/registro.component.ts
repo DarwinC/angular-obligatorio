@@ -60,4 +60,14 @@ export class RegistroComponent implements OnInit {
       }
     );
   }
+    // el toast
+  showToast(tipo, title, msg, posicion) {
+    const type = tipo;
+    this.toaster.open({
+      text: msg,
+      caption: type + " " + title,
+      type: type,
+      position: posicion
+    });
+  }
 }
