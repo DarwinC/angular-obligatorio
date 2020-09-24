@@ -14,6 +14,7 @@ export class RegistroComponent implements OnInit {
   errMsg;
 
   constructor(
+    private toaster: Toaster,
     private formBuilder: FormBuilder,
     private userService: UsuarioService,
     private router: Router
