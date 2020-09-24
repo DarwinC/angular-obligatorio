@@ -13,13 +13,20 @@ body {
 }
 
 .container {
+  display: table;
   margin: auto;
-  width: 50%;
+  //width: 100%;
   flex-direction: row;
   box-shadow: 2.25px 0.1px 4px black;
   padding: 10px;
 }
 
+
+.container #form_login {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+}
 
 .basic-container {
   padding: 5px;
