@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { UsuarioService } from "../services/usuario.service";
 import { Router } from "@angular/router";
+import { ToastConfig, Toaster, ToastType } from "ngx-toast-notifications";
 
 @Component({
   selector: "app-registro",
