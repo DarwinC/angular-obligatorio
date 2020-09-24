@@ -43,7 +43,7 @@ export class AddGastoComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerRubros();
-    this.showToast('warning','Titulo','Un mensaje','top-center');
+    
   }
 // evento de cambio del select
   onChangeofOptions(newGov) {
@@ -59,6 +59,7 @@ export class AddGastoComponent implements OnInit {
       },
       err => {
         if (err.status === 500) {
+          this.showToast('warning','Titulo','Un mensaje','top-center');
           console.log("Ha ocurrido un error en el servidor");
         }
       }

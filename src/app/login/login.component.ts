@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(usuario, password).subscribe(user => {
       this.userService.setUser(user);
       console.log(user);
+      this.showToast('success','Bienvenido','Bienvenido : '+usuario,'top-center');
+
       this.router.navigate(['/gastos']);
     },
     err => {
