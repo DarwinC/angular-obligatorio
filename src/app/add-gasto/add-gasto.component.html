@@ -1,3 +1,4 @@
+<div id="form_add_gasto">
 <h3>Agregar gasto</h3>
 
 <form [formGroup]="addGastoForm" (ngSubmit)="onSubmit(addGastoForm.value)">
@@ -28,7 +29,9 @@
 
     <!--//*<input id="rubro" type="text" formControlName="rubro">*//-->
   </div>
-
+<br>
   <h3 *ngIf="errMsg">{{errMsg}}</h3>
-
+<br>
   <button class="button" type="submit">Agregar</button>
+</form>
+</div>

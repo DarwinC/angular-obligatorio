@@ -1,3 +1,4 @@
+<div id="form_registro">
 <h3>Registro de usuario</h3>
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
@@ -21,3 +22,7 @@
   <button class="button" type="submit">Registrar</button>
 
 </form>
+
+<p>¿Ya está registrado? Ingrese <a [routerLink]="['']"> aquí Ingresar</a></p>
+
+</div>
