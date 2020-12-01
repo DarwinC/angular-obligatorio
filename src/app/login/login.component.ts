@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       console.log(user);
       this.showToast('success','Bienvenido','Bienvenido : '+usuario,'top-center');
 
-      this.router.navigate(['/gastos']);
+      this.router.navigate(['gastos']);
     },
     err => {
       const estado_error = err.status;

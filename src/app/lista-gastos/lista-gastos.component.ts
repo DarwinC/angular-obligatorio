@@ -35,7 +35,6 @@ export class ListaGastosComponent implements OnInit {
   obtenerGastos() {
     this.gastosService.getAll().subscribe(
       a => {
-        //    this.gastosService.getAll().subscribe(res => {
         console.log(a);
         this.gastos = a["gastos"];
         console.log("Se consulto el listado de gastos");
